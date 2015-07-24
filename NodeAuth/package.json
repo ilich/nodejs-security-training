@@ -11,8 +11,9 @@
     "url": "git+https://github.com/ilich/nodejs-security-training.git"
   },
   "keywords": [
-    "helmet",
-    "csrf",
+    "basic-auth",
+    "passport",
+    "google authenticator",
     "security",
     "express"
   ],
