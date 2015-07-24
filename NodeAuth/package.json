@@ -1,0 +1,32 @@
+{
+  "name": "node-fix-csrf",
+  "version": "1.0.0",
+  "description": "Node.js Security Example. Authentication.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilich/nodejs-security-training.git"
+  },
+  "keywords": [
+    "helmet",
+    "csrf",
+    "security",
+    "express"
+  ],
+  "author": "Ilya Verbitskiy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ilich/nodejs-security-training/issues"
+  },
+  "homepage": "https://github.com/ilich/nodejs-security-training#readme",
+  "private": true,
+  "dependencies": {
+    "basic-auth": "^1.0.3",
+    "body-parser": "^1.13.2",
+    "ejs": "^2.3.3",
+    "express": "^4.13.1"
+  }
+}
