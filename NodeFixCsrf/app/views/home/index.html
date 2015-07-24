@@ -1,5 +1,30 @@
 <% include ../partials/header.html %>
 
-<b>Hello World!</b>
+<div class="row">
+	<div class="col-md-4">
+		<% if (errors.length > 0) { %>
+			<ul class="bg-danger">
+				<% for (var i = 0; i < errors.length; i++) { %>
+					<li><%= errors[i] %></li>
+				<% } %>
+			</ul>
+		<% } %>
+			
+		<form method="post" action="/">
+			<input type="hidden" name="_csrf" value="<%= token %>">
+			
+			<div class="form-group">
+				<label for="firstName">First name</label>
+    			<input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" value="<%= firstName %>">
+			</div>
+			<div class="form-group">
+				<label for="lastName">Last name</label>
+    			<input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last name" value="<%= lastName %>">
+			</div>
+			
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</div>
 
 <% include ../partials/footer.html %>
