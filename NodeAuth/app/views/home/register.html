@@ -2,12 +2,8 @@
 
 <div class="row">
 	<div class="col-md-4">
-		<% if (errors.length > 0) { %>
-			<ul class="bg-danger">
-				<% for (var i = 0; i < errors.length; i++) { %>
-					<li><%= errors[i] %></li>
-				<% } %>
-			</ul>
+		<% if (message !== null && message.length > 0) { %>
+			<div class="bg-danger"><%= message %></div>
 		<% } %>
 			
 		<form method="post" action="/register">

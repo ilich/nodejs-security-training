@@ -15,10 +15,7 @@ function configure(passport, db) {
 		});
 	});
 	
-	// Registration
-	
-	// Authentication
-	passport.use("local-login", new LocalStrategy(
+	passport.use(new LocalStrategy(
 		function (username, password, done) {
 			process.nextTick(function () {
 				users.findOne({ username: username }, function (err, user) {

@@ -69,10 +69,33 @@ var createUserModel = function (db, user) {
 		return pwd === user.password;
 	}
 	
+	function createAccount(callback) {
+		validate(user, function (err) {
+			if (err) {
+				return callback(err);
+			}
+			
+			hashPassword(user.password, function (err, data) {
+				if (err) {
+					return callback(err);
+				}
+				
+				users.insert({
+					username: user.username,
+					password: data.hash,
+					salt: data.salt
+				});
+				
+				callback(null);
+			});
+		});
+	}
+	
 	return {
 		validate: validate,
 		hashPassword: hashPassword,
-		verifyPassword: verifyPassword
+		verifyPassword: verifyPassword,
+		createAccount: createAccount
 	};
 };
 

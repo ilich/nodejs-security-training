@@ -6,7 +6,7 @@ var routes = function (app, db, passport) {
 	var homeController = new HomeController(db);
 	
 	app.get("/", homeController.index);
-	app.post("/", passport.authenticate("local-login", {
+	app.post("/", passport.authenticate("local", {
 		successRedirect: "/account",
 		failureRedirect: "/",
 		failureFlash: true	
@@ -15,7 +15,7 @@ var routes = function (app, db, passport) {
 	app.get("/register", homeController.register);
 	app.get("/account", isLoggedIn, homeController.account);
 	app.get("/logout", homeController.logout);
-	//app.post("/register", homeController.createAccount);
+	app.post("/register", homeController.createAccount);
 };
 
 function isLoggedIn(req, res, next) {
