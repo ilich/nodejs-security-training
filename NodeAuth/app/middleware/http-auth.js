@@ -3,7 +3,7 @@
 var basicAuth = require("basic-auth");
 var config = require("../../config/config");
 
-var auth = function (req, res, next) {
+var httpAuth = function (req, res, next) {
 	function isAuthenticated(user) {
 		return user && 
 			user.name === config.basicAuth.username && 
@@ -23,4 +23,4 @@ var auth = function (req, res, next) {
 	}
 };
 
-module.exports = auth;
+module.exports = httpAuth;
